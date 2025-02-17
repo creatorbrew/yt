@@ -1,0 +1,53 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  app-header,
+  app-nav,
+  app-buttons {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+
+  app-header {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; 
+  }
+  
+
+  app-nav {
+    top: 60px; 
+    left: 0;
+    width: 280px; 
+    height: calc(100% - 60px);
+    overflow-y: auto;
+  }
+  
+ 
+  app-buttons {
+    top: 60px;
+    left: 280px; 
+    height: 50px;
+    width: calc(100% - 280px);
+    background-color: #fff; 
+  }
+  
+
+  .content-container {
+    position: absolute;
+    top: 110px; 
+    left: 280px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-color: #f9f9f9; 
+  }
+  

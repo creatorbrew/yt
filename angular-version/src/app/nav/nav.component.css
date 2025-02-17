@@ -1,0 +1,178 @@
+/* NAV COMPONENT STYLES */
+
+/* Main nav container */
+.nav {
+  position: fixed;
+  top: 70px;      /* below header (70px tall) */
+  left: 0;
+  width: 300px;   /* default width for ≥1300px screens */
+  height: calc(100% - 70px);
+  overflow-y: hidden; /* hide scrollbar by default */
+  z-index: 900;
+  background-color: #fff; /* white background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Show vertical scrollbar when hovering over the nav */
+.nav:hover {
+  overflow-y: auto;
+}
+
+/* For mid-size screens, reduce nav width */
+@media (max-width: 1299px) and (min-width: 768px) {
+  .nav {
+    width: 150px;
+  }
+}
+
+/* Hide nav entirely below 768px */
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Nav container holding all items; shift left by 40px ONLY for mid-size screens */
+.nav__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keep items flush left */
+  padding: 1rem;
+}
+
+/* Apply the 40px left shift only when screen width is less than 1300px (and at least 768px) */
+@media (max-width: 1299px) and (min-width: 768px) {
+  .nav__container {
+    transform: translateX(-27px);
+  }
+}
+
+/* Group container */
+.nav-group {
+  margin-bottom: 1rem;
+}
+
+/* For screens below 1300px, hide extra groups and sign-in section */
+@media (max-width: 1299px) {
+  .nav-group--extra,
+  .extra,
+  .signin-text,
+  .sign-in-btn {
+    display: none !important;
+  }
+}
+
+/* Spacer between groups */
+.gap-25 {
+  height: 25px;
+}
+
+/* Horizontal rule styling */
+hr.extra {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0.5rem 0;
+}
+
+/* Nav item styling */
+.nav-item {
+  margin-bottom: 30px; 
+  padding: 5px 0;  /* fixed vertical padding for consistency */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Hover state for nav items */
+.nav-item:hover {
+  background-color: #f2f2f2;
+}
+
+/* 
+  Wrapper for icon and label.
+  This wrapper is always offset by margin-left: 30px so that the icon is fixed 30px from the nav’s left edge.
+  On large screens, it lays out contents in a row.
+  On mid-size screens, it switches to a column layout so the label is centered beneath the icon.
+*/
+.icon-label-wrapper {
+  margin-left: 30px;   /* always 30px from left edge */
+  display: flex;
+  align-items: center; /* row layout by default */
+}
+
+/* Large screens (≥1300px) */
+@media (min-width: 1300px) {
+  .icon-label-wrapper {
+    flex-direction: row;
+  }
+  .icon-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    background-color: #ccc;
+    flex-shrink: 0;
+    margin-right: 25px; /* gap between icon and label */
+  }
+  .label {
+    white-space: nowrap;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+/* Mid-size screens (768px–1299px) */
+@media (max-width: 1299px) and (min-width: 768px) {
+  .icon-label-wrapper {
+    flex-direction: column; /* stack icon and label */
+    align-items: center;    /* center content inside the wrapper */
+    width: 80px;            /* fixed width so the label can center */
+  }
+  .icon-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    background-color: #ccc;
+    flex-shrink: 0;
+    margin: 0;              /* remove horizontal margin */
+    margin-bottom: 5px;      /* gap between icon and label */
+  }
+  .label {
+    white-space: nowrap;
+    font-size: 0.9rem;      /* optionally smaller text */
+    text-align: center;     /* center the label text */
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Nav title */
+.nav-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.signin-text {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.sign-in-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #065FD4;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.sign-in-btn:hover {
+  background-color: #eee;
+}

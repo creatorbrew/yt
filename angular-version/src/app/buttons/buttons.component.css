@@ -1,0 +1,25 @@
+.buttons {
+  position: fixed;
+  top: 70px; 
+  left: 300px; 
+  height: 70px; 
+  display: flex;
+  align-items: center;     
+  justify-content: flex-start;
+  padding-left: 1rem;    
+  z-index: 950; 
+}
+
+
+@media (max-width: 1299px) and (min-width: 768px) {
+  .buttons {
+    left: 150px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .buttons {
+    left: 0;
+  }
+}

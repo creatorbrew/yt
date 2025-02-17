@@ -1,0 +1,29 @@
+.topics-container {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .topic-btn {
+    height: 40px;
+    padding: 1em 2em;
+    margin-right: 0.5rem;
+    background: #ccc;
+    border: none;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .topic-btn:hover {
+    filter: brightness(0.9);
+  }
+  
+  .topic-btn.selected {
+    background-color: #000;
+    color: #fff;
+  }
+  

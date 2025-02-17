@@ -1,0 +1,21 @@
+.content {
+  position: absolute;
+  top: 140px; 
+  left: 300px; 
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+@media (max-width: 1299px) and (min-width: 768px) {
+  .content {
+    left: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    left: 0;
+  }
+}
