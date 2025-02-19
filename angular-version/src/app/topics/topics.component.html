@@ -1,11 +1,10 @@
 <div class="topics-container">
-    <button
-      class="topic-btn"
-      *ngFor="let topic of topics"
-      [class.selected]="topic === selectedTopic"
-      (click)="selectTopic(topic)"
-    >
-      {{ topic }}
-    </button>
-  </div>
-  
+  <button
+    class="topic-btn"
+    *ngFor="let topic of topics"
+    [class.selected]="topic === selectedTopic"
+    (click)="selectTopic(topic)"
+  >
+    {{ topic }}
+  </button>
+</div>

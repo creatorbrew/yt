@@ -1,0 +1,77 @@
+.video-card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;  /* space between cards */
+    width: 200px;        /* fixed width for vertical videos */
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    position: relative;
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  
+  /* For a 9:16 aspect ratio, the height is 16/9 of the width. 
+     Using the CSS padding trick, we set padding-bottom to ~177.78% */
+  .video-thumbnail::before {
+    content: "";
+    display: block;
+    padding-bottom: 177.78%;
+    border-radius: inherit;
+  }
+  
+  .video-details {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .video-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .video-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .video-title {
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.2;
+  }
+
+  .creator-name, .video-stats{
+    font-size: .9em;
+  }
+  
+  .more-options {
+    flex-shrink: 0;
+    font-size: 1.2em;
+  }
+  
+  /* Responsive: at 768px and below, make the card full width (minus 15px on each side) */
+  @media (max-width: 768px) {
+    .video-card {
+        width: calc(100% - 40px);
+        margin: 0 15px;
+        margin-bottom: 15px; /* optional spacing below the card */
+   
+    }
+
+    :host {
+        display: block;
+        width: 100%; /* Full width minus 15px left and right */
+        margin: 0 auto;         /* Center the component */
+       
+      }
+  }
+  

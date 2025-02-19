@@ -1,6 +1,38 @@
-<main class="content">
-  <p>Content Placeholder</p>
-  <p>Scroll down to see more...</p>
-  <!-- Extra space to enable scrolling test -->
-  <div style="height: 1000px;"></div>
-</main>
+<div class="content-container">
+  <section class="video-row">
+    <app-video-h 
+      *ngFor="let video of visibleVideoCards"
+      [title]="video.title"
+      [creator]="video.creator"
+      [views]="video.views"
+      [age]="video.age">
+    </app-video-h>
+  </section>
+
+  <div class="channel-header">
+    <div class="channel-icon"></div>
+    <div class="channel-title">Shorts</div>
+  </div>
+
+  <section class="video-row vertical">
+    <!-- Vertical header for the vertical videos -->
+
+    <app-video-v 
+      *ngFor="let video of visibleVerticalVideoCards"
+      [title]="video.title"
+      [creator]="video.creator"
+      [views]="video.views"
+      [age]="video.age">
+    </app-video-v>
+  </section>
+  
+  <section class="video-row">
+    <app-video-h 
+      *ngFor="let video of visibleVideoCards"
+      [title]="video.title"
+      [creator]="video.creator"
+      [views]="video.views"
+      [age]="video.age">
+    </app-video-h>
+  </section>
+</div>

@@ -1,164 +1,41 @@
-<aside class="nav">
-  <nav class="nav__container">
-    <!-- FIRST GROUP (Always shown) -->
-    <div class="nav-group nav-group--main">
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Home</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Shorts</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Subscriptions</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">You</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">History</span>
-        </div>
-      </div>
+<aside class="sidebar">
+  <nav class="sidebar__nav">
+    <app-nav-button label="Home" [selected]="selectedNav === 'Home'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Shorts" [selected]="selectedNav === 'Shorts'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Subscriptions" [selected]="selectedNav === 'Subscriptions'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="You" [selected]="selectedNav === 'You'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="History" [selected]="selectedNav === 'History'" (select)="onSelect($event)"></app-nav-button>
+    
+    
+    <section class="sidebar__nav extra">
+    <hr class="extra" />
+    <p class="signin-text extra">Sign in to like videos, comment, and subscribe.</p>
+    <div class="sign-in-btn-container">
+      <button class="sign-in-btn ">
+        <div class="sign-in-icon"></div>
+        Sign in
+      </button>
     </div>
 
-    <!-- HR after first group -->
-    <hr class="extra" />
-
-    <!-- SIGN IN SECTION -->
-    <p class="signin-text">
-      Sign in to like videos, comment, and subscribe.
-    </p>
-    <button class="sign-in-btn">
-      Sign in
-    </button>
-    <!-- HR after sign in section -->
-    <hr class="extra" />
-
-    <!-- SECOND GROUP -->
-    <div class="nav-group nav-group--extra">
-      <div class="nav-title">Explore</div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Trending</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Music</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Movies & TV</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Live</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Gaming</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">New</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Sports</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Learning</span>
-        </div>
-      </div>
-    </div>
-    <!-- HR after second group -->
-    <hr class="extra" />
-
-    <!-- THIRD GROUP -->
-    <div class="nav-group nav-group--extra">
-      <div class="nav-title">More from YouTube</div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">YouTube Premium</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">YouTube TV</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">YouTube Music</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">YouTube Kids</span>
-        </div>
-      </div>
-    </div>
-    <!-- HR after third group -->
-    <hr class="extra" />
-
-    <!-- FOURTH GROUP -->
-    <div class="nav-group nav-group--extra">
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Settings</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Report History</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Help</span>
-        </div>
-      </div>
-      <div class="nav-item">
-        <div class="icon-label-wrapper">
-          <div class="icon-box"></div>
-          <span class="label">Send Feedback</span>
-        </div>
-      </div>
-    </div>
+    <hr />
+    <app-nav-button label="Trending" [selected]="selectedNav === 'Trending'" (select)="onSelect($event) "></app-nav-button>
+    <app-nav-button label="Music" [selected]="selectedNav === 'Music'" (select)="onSelect($event)" ></app-nav-button>
+    <app-nav-button label="Movies & TV" [selected]="selectedNav === 'Movies & TV'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Live" [selected]="selectedNav === 'Live'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Gaming" [selected]="selectedNav === 'Gaming'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="New" [selected]="selectedNav === 'New'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Sports" [selected]="selectedNav === 'Sports'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Learning" [selected]="selectedNav === 'Learning'" (select)="onSelect($event)"></app-nav-button>
+    <hr/>
+    <app-nav-button label="YouTube Premium" [selected]="selectedNav === 'YouTube Premium'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="YouTube TV" [selected]="selectedNav === 'YouTube TV'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="YouTube Music" [selected]="selectedNav === 'YouTube Music'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="YouTube Kids" [selected]="selectedNav === 'YouTube Kids'" (select)="onSelect($event)"></app-nav-button>
+    <hr/>
+    <app-nav-button label="Settings" [selected]="selectedNav === 'Settings'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Report history" [selected]="selectedNav === 'Report history'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Help" [selected]="selectedNav === 'Help'" (select)="onSelect($event)"></app-nav-button>
+    <app-nav-button label="Send feedback" [selected]="selectedNav === 'Send feedback'" (select)="onSelect($event)"></app-nav-button>
+  </section>
   </nav>
 </aside>

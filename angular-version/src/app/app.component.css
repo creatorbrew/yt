@@ -1,0 +1,50 @@
+.app-grid {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav buttons"
+      "nav main";
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: 60px 50px 1fr;
+    height: 100vh;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  .sidebar {
+    grid-area: nav;
+  }
+  
+  .buttons {
+    grid-area: buttons;
+  }
+  
+  .main-content {
+    grid-area: main;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+ 
+  @media (max-width: 1300px) and (min-width: 768px) {
+    .app-grid {
+      grid-template-columns: 90px 1fr;
+    }
+  }
+  
+  /* For small screens below 768px, hide the sidebar and adjust layout */
+  @media (max-width: 768px) {
+    .app-grid {
+      grid-template-areas:
+        "header header"
+        "buttons buttons"
+        "main main";
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      display: none;
+    }
+  }
+  

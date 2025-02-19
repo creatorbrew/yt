@@ -1,0 +1,21 @@
+.nav-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .nav-item:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+  .icon-box {
+    width: 24px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 4px;
+    margin-right: 25px;
+  }
+  
+
+  

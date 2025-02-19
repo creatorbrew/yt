@@ -1,53 +1,73 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Remove fixed height; let the page expand naturally */
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  app-header,
-  app-nav,
-  app-buttons {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-  }
-  
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Instead of forcing 100vh, use min-height so content can push it taller */
+  min-height: 100vh;
+}
 
-  app-header {
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px; 
-  }
-  
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
 
-  app-nav {
-    top: 60px; 
-    left: 0;
-    width: 280px; 
-    height: calc(100% - 60px);
-    overflow-y: auto;
-  }
-  
- 
-  app-buttons {
-    top: 60px;
-    left: 280px; 
-    height: 50px;
-    width: calc(100% - 280px);
-    background-color: #fff; 
-  }
-  
+.buttons {
+  position: sticky;
+  top: 60px;
+  z-index: 999;
+  height: 50px;
+}
 
-  .content-container {
-    position: absolute;
-    top: 110px; 
-    left: 280px;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    background-color: #f9f9f9; 
+/* Remove overflow: hidden so the main area can grow */
+.main-area {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar remains scrollable on its own if needed */
+.sidebar {
+  position: sticky;
+  width: 280px;
+  overflow-y: auto;
+  flex-shrink: 0;
+  margin-bottom: 200px;
+
+}
+
+/* Remove the inner scrolling from .content so the page scrolls instead */
+.content {
+  flex: 1;
+  background-color: #ffffff;
+  /* Remove overflow-y: auto */
+}
+
+/* --- Media Queries for Responsive Behavior --- */
+
+/* Shrink nav from 280px to 90px at 1300px and below */
+@media (max-width: 1300px) {
+  .sidebar {
+    width: 90px;
   }
-  
+}
+
+/* Hide sidebar on small screens below 768px (like original) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  /* Hide extra parts of header if you want, matching original: */
+  .header .header__left,
+  .header .header__right {
+    display: none;
+  }
+  /* Adjust .buttons top if header changes height, etc. */
+}

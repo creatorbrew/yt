@@ -1,0 +1,82 @@
+.video-card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;  /* space between cards */
+    width: 330px;        /* match original grid cell width */
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    position: relative;
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  
+  .video-thumbnail::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+    border-radius: inherit;
+  }
+  
+  .video-details {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .video-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .channel-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .video-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .video-title {
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.2;
+  }
+
+  .creator-name, .video-stats{
+    font-size: .9em;
+  }
+  
+  .more-options {
+    flex-shrink: 0;
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 768px) {
+    .video-card {
+      /* Let it fill the available width (minus side margins). */
+      width: calc(100% - 10px);
+      margin: 0 0px;
+      margin-bottom: 15px; /* optional spacing below the card */
+    }
+
+    :host {
+      display: block;
+      width: 100%; /* Full width minus 15px left and right */
+      margin: 0 auto;         /* Center the component */
+  
+    }
+  }
+  
