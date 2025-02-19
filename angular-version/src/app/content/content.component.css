@@ -7,9 +7,9 @@
 
 .vertical-header {
   display: flex;
-  align-items: center; /* vertically centers the items */
-  gap: 15px;         /* 15px gap between the icon and title */
-  margin-bottom: 15px; /* space between the header and the videos */
+  align-items: center; 
+  gap: 15px;         
+  margin-bottom: 15px; 
 }
 
 
@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   margin-left: 10px;;
-  margin-bottom: 15px; /* Adds space between the header and the video thumbnail */
+  margin-bottom: 15px; 
 }
 
 .channel-icon {
   width: 40px;
   height: 40px;
-  background-color: #ddd; /* Change to desired color */
+  background-color: #ddd; 
   border-radius: 50%;
   flex-shrink: 0;
 }
