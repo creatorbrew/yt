@@ -1,7 +1,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  /* Remove fixed height; let the page expand naturally */
   min-height: 100%;
   font-family: Arial, sans-serif;
 }
@@ -9,7 +8,6 @@ html, body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  /* Instead of forcing 100vh, use min-height so content can push it taller */
   min-height: 100vh;
 }
 
@@ -27,13 +25,11 @@ html, body {
   height: 50px;
 }
 
-/* Remove overflow: hidden so the main area can grow */
 .main-area {
   display: flex;
   flex: 1;
 }
 
-/* Sidebar remains scrollable on its own if needed */
 .sidebar {
   position: sticky;
   width: 280px;
@@ -43,31 +39,25 @@ html, body {
 
 }
 
-/* Remove the inner scrolling from .content so the page scrolls instead */
+
 .content {
   flex: 1;
   background-color: #ffffff;
-  /* Remove overflow-y: auto */
 }
 
-/* --- Media Queries for Responsive Behavior --- */
 
-/* Shrink nav from 280px to 90px at 1300px and below */
 @media (max-width: 1300px) {
   .sidebar {
     width: 90px;
   }
 }
 
-/* Hide sidebar on small screens below 768px (like original) */
 @media (max-width: 768px) {
   .sidebar {
     display: none;
   }
-  /* Hide extra parts of header if you want, matching original: */
   .header .header__left,
   .header .header__right {
     display: none;
   }
-  /* Adjust .buttons top if header changes height, etc. */
 }

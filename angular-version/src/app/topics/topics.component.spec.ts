@@ -7,8 +7,7 @@ describe('TopicsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      // Because TopicsComponent is standalone and imports CommonModule internally,
-      // we only need to include TopicsComponent here.
+
       imports: [TopicsComponent]
     }).compileComponents();
 
